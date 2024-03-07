@@ -4,7 +4,7 @@ import os
 
 def video_download(URL):
     file_keep = "watch.py"
-    files = os.listdir('.')
+    files = os.listdir('./')
     for file in files:
         if file != file_keep:
             os.remove(file)
