@@ -4,10 +4,13 @@ import os
 
 def video_download(URL):
     file_keep = "watch.py"
-    files = os.listdir('./')
+    f1 = "requirements.txt"
+    f2 = "environment.yml"
+    files = os.listdir('.')
     for file in files:
-        if file != file_keep:
-            os.remove(file)
+        if file != file_keep and file != f1 and file != f2:
+            if os.path.isfile(file): # ファイルであるか確認
+                os.remove(file)
 
     # カスタマイズしたオプションを設定
     ydl_opts = {
