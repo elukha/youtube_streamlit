@@ -1,14 +1,17 @@
 import streamlit as st
 import yt_dlp
 import os
-from stqdm import stqdm
 
 def video_download(URL):
     file_keep = "watch.py"
+    f1 = "requirements.txt"
+    f2 = "environment.yml"
     files = os.listdir('.')
     for file in files:
         if file != file_keep:
-            os.remove(file)
+            if file != f1:
+                if file != f2:
+                    os.remove(file)
 
     # カスタマイズしたオプションを設定
     ydl_opts = {
