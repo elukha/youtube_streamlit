@@ -1,7 +1,6 @@
 import streamlit as st
 import yt_dlp
 import os
-import ffmpeg
 
 def video_download(URL):
     file_keep = "watch.py"
