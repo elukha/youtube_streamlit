@@ -34,11 +34,18 @@ def progress_hook(d):
 
 st.title("YouTubeを見る")
 URL = st.text_input("URLを入力")
+
+
+path = os.getcwd()
+st.write(path)
+
+
 if st.button("処理開始"):
     video_download(URL)
     
     file_select = "watch.py"
     files = os.listdir('.')
+    
     
     dir_path = glob.glob("*mp4")
     st.write(dir_path)
