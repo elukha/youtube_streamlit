@@ -1,6 +1,7 @@
 import streamlit as st
 import yt_dlp
 import os
+import glob
 
 def video_download(URL):
     file_keep = "watch.py"
@@ -39,8 +40,10 @@ if st.button("処理開始"):
     file_select = "watch.py"
     files = os.listdir('.')
     
-    for file in files:
-        if file != file_select:
-            with open('video.mp4', 'rb') as video_file:
-                video_bytes = video_file.read()
-                st.video(video_bytes)
+    dir_path = glob.glob("*mp4")
+    st.write(dir_path)
+    video_path = "".join(dir_path)
+
+    with open(video_path, 'rb') as video_file:
+        video_bytes = video_file.read()
+        st.video(video_bytes)
